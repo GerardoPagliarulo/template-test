@@ -1,1 +1,28 @@
-//
+//// APP SCSS
+
+// Variables
+@import 'partials/variables';
+
+// Commons
+@import 'partials/commons';
+
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// HEADER
+@import 'partials/header';
+
+//MAIN
+
+// Home Page
+@import 'partials/partials_static_page/home';
+// Form Page
+@import 'partials/partials_static_page/form';
+
+// FOOTER ALL PAGE
+@import 'partials/footer';
+
+

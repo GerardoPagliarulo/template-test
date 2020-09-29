@@ -1,0 +1,73 @@
+// HEADER
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+.main-nav {
+    @include flex($just_content:space-between);
+    position: absolute;
+    //position: fixed;
+    width: 100%;
+    z-index: 1;
+    .nav-option,
+    .nav-icon {
+        @include flex;
+        padding: 20px;
+        li {
+            margin-right: 20px;
+            a {
+                position: relative;
+                color: $white;
+                transition: .3s;
+                span {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    left: 70%;
+                    bottom: 40%;
+                    padding: 2px;
+                    text-align: center;
+                    font-size: 9px;
+                    background: $dark_grey;
+                    border-radius: 50%;
+                }
+                i {
+                    transition: .3s;
+                }
+            }
+        }
+        & li:last-child {
+            margin-right: 0px;
+        }
+    }
+    .nav-option {
+        display: none;
+        font-weight: 600;
+        a:hover {
+            color: $hover_grey;
+        }
+    }
+    .nav-icon a:hover {
+        i {
+            color: $hover_grey;
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .main-nav {
+        .nav-option {
+            display: flex;
+        }    
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}

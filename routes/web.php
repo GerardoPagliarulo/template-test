@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+// Statics Pages
+Route::get('/', 'StaticPageController@index')->name('static-page.home');
+Route::get('/form', 'StaticPageController@form')->name('static-page.form');
