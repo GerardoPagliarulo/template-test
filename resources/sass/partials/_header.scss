@@ -5,12 +5,13 @@
 
 .main-nav {
     @include flex($just_content:space-between);
-    position: absolute;
-    //position: fixed;
+    position: fixed;
     width: 100%;
-    z-index: 1;
+    transition: .3s;
+    z-index: 3;
     .nav-option,
-    .nav-icon {
+    .nav-icon,
+    .menu-mobile {
         @include flex;
         padding: 20px;
         li {
@@ -28,7 +29,6 @@
                     padding: 2px;
                     text-align: center;
                     font-size: 9px;
-                    background: $dark_grey;
                     border-radius: 50%;
                 }
                 i {
@@ -52,6 +52,34 @@
             color: $hover_grey;
         }
     }
+    // Mobile menu
+    .menu-mobile {
+        @include flex ($flex_direction: column);
+        .menu-mobile-icon {
+            transition: .3s;
+            position: relative;
+            color: white;
+            cursor: pointer;
+            &:hover {
+                color: $hover_grey;
+            }
+        }
+        .menu-mobile-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: $header_black;
+            li {
+                margin-bottom: 15px;
+                a:hover {
+                    color: $hover_grey;
+                }
+            }
+        }
+    }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -62,8 +90,11 @@
     .main-nav {
         .nav-option {
             display: flex;
+        } 
+        .menu-mobile {
+            display: none;
         }    
-    }
+    }       
 }
 
 // Large devices (desktops, 992px and up)

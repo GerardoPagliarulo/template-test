@@ -19,7 +19,7 @@
     <section class="explore-banner">
         <div class="explore-banner-options">
             <div class="explore-banner-set">
-                <img src="{{ asset('images/lamps.jpg') }}" alt="Lamps image">
+                <img src="{{ asset('images/vintage-lamps.jpg') }}" alt="Lamps image">
                 <div class="banner-title">
                     <h2>lighting collections</h2>
                     <a href="#">
@@ -57,152 +57,154 @@
             <hr class="decorative-line">
             <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod temper!</p>
         </div>
-        <div class="product-card-list">
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/egg-slicer.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>form egg slicer</p>
-                        <span>$35.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/pendant-lamp.jpg') }}" alt="Chair image">
-                        <span class="scount badge">&#8722;29&#37;</span>
-                    </div>
-                    <div class="product-info">
-                        <p>cymbal pendant</p>
-                        <span>$25.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/chair-wood-legs.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>chair wood legs</p>
-                        <span>$30.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/oil-lamp.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>light oil lamp</p>
-                        <span>$65.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/shaker.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>line cocktail shaker</p>
-                        <span>$65.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/piep-show.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>piep show</p>
-                        <span>$15.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/herit-chair.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>herit chair</p>
-                        <span>$55.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/table-lamp.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>buddy table lamp</p>
-                        <span>$35.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/clock.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>picto wall clock</p>
-                        <span>$15.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/brush-set.jpg') }}" alt="Chair image">
-                        <span class="status badge">New</span>
-                    </div>
-                    <div class="product-info">
-                        <p>brush set small</p>
-                        <span>$65.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/thermos.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>cru thermos jug</p>
-                        <span>$45.00</span>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <div class="product-img">
-                        <div class="overlay"></div>
-                        <img src="{{ asset('images/bowl.jpg') }}" alt="Chair image">
-                    </div>
-                    <div class="product-info">
-                        <p>urkiola bowl</p>
-                        <span>$85.00</span>
-                    </div>
-                </a>
+        <div class="wrapper-card-list">
+            <div class="product-card-list">
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/egg-slicer.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>form egg slicer</p>
+                            <span>$35.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/pendant-lamp.jpg') }}" alt="Chair image">
+                            <span class="scount badge">&#8722;29&#37;</span>
+                        </div>
+                        <div class="product-info">
+                            <p>cymbal pendant</p>
+                            <span>$25.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/chair-wood-legs.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>chair wood legs</p>
+                            <span>$30.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/oil-lamp.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>light oil lamp</p>
+                            <span>$65.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/shaker.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>line cocktail shaker</p>
+                            <span>$65.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/piep-show.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>piep show</p>
+                            <span>$15.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/herit-chair.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>herit chair</p>
+                            <span>$55.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/table-lamp.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>buddy table lamp</p>
+                            <span>$35.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/clock.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>picto wall clock</p>
+                            <span>$15.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/brush-set.jpg') }}" alt="Chair image">
+                            <span class="status badge">New</span>
+                        </div>
+                        <div class="product-info">
+                            <p>brush set small</p>
+                            <span>$65.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/thermos.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>cru thermos jug</p>
+                            <span>$45.00</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="product-img">
+                            <div class="overlay"></div>
+                            <img src="{{ asset('images/bowl.jpg') }}" alt="Chair image">
+                        </div>
+                        <div class="product-info">
+                            <p>urkiola bowl</p>
+                            <span>$85.00</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="product-card-btn btn">
@@ -321,5 +323,7 @@
             </ul>
         </div>
     </section>
+
+    <script src="{{ asset('js/home.js') }}"></script>
 
 @endsection

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10970,38 +10970,6 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  // MENU MOBILE
-  // Hambutger Menu 
-  var menuIcon = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-mobile-icon');
-  var slideMenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-mobile-options');
-  menuIcon.click(function () {
-    slideMenu.slideToggle();
-
-    if (menuIcon.hasClass("fa-bars")) {
-      menuIcon.removeClass("fa-bars").addClass("fa-times");
-    } else {
-      menuIcon.removeClass("fa-times").addClass("fa-bars");
-    }
-  });
-}); // <- END READY
-
-/***/ }),
-
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -11035,26 +11003,50 @@ window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./resources/js/home.js":
+/*!******************************!*\
+  !*** ./resources/js/home.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  // HOME NAVBAR 
+  // Scroll changement
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main-nav').removeClass('black-nav');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.stat-nav').removeClass('orange-badge-nav');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.stat-nav').addClass('dark-badge-nav');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
+    var height = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main-nav').addClass('black-nav');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.stat-nav').addClass('orange-badge-nav');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.stat-nav').removeClass('dark-badge-nav');
+
+    if (height === 0) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main-nav').removeClass('black-nav');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.stat-nav').removeClass('orange-badge-nav');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.stat-nav').addClass('dark-badge-nav');
+    }
+  });
+}); // <- END READY
 
 /***/ }),
 
-/***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/***/ 1:
+/*!************************************!*\
+  !*** multi ./resources/js/home.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Utente pc\Desktop\test\template-test\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Utente pc\Desktop\test\template-test\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Utente pc\Desktop\test\template-test\resources\js\home.js */"./resources/js/home.js");
 
 
 /***/ })

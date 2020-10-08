@@ -1,12 +1,12 @@
 //// COMMONS
 
 // General
-body { 
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: $principal_font_family;
-    background: $background_grey;
+    background-color: $background_grey;
 }
 
 ul {
@@ -30,10 +30,38 @@ a {
 }
 
 //// UTILITIES
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    .main-content {
+        flex-grow: 1;
+    }
+}
 
 .container {
     margin: 0 auto;
     width: 900px;
+}
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-grey {
+    background-color: $background_grey;
+}
+
+.black-nav {
+    background-color: $header_black;
+}
+
+.orange-badge-nav {
+    background-color: $badge_orange;
+}
+
+.dark-badge-nav {
+    background-color: $dark_grey;
 }
 
 .decorative-line {
@@ -46,6 +74,7 @@ a {
     margin-bottom: 30px;
     text-align: center;
     h2 {
+        margin-top: 0;
         margin-bottom: 15px;
         color: $dark_grey;
     }
@@ -53,6 +82,8 @@ a {
         background: $dark_grey;
     }
     p {
+        margin-right: 15px;
+        margin-left: 15px;    
         font-size: 14px;
         color: $first_light_grey;
     }
@@ -91,7 +122,7 @@ a {
     padding: 13px;
     font-size: 11px;
     color: $white;
-    background: $scount_orange;
+    background: $badge_orange;
     border-radius: 50%;
 }
 
@@ -108,7 +139,37 @@ a {
     transition: 0.3s;
     border-radius: 5px;
     border-radius: 5px;
-    //background-color: rgb(0 0 0 / 55%);
     background-color: rgb(37, 35, 35, .35);
     z-index: 1;
+}
+
+// FORM UTILITIES
+.visibility {
+    visibility: hidden;
+}
+
+// Icon green checklist
+.fa-check-circle.hidden {
+    display: none;
+}
+
+// Icon red checklist / Icon error input
+.fa-exclamation-circle.hidden {
+    display: none;
+}
+
+.error {
+    border: 2px solid $red;
+}
+
+.valid {
+    border: 2px solid $green;
+}
+
+.uncheck {
+    color: $red;
+}
+
+.check {
+    color: $green;
 }

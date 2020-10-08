@@ -47,22 +47,18 @@
 
 // EXPLORE BANNER
 .explore-banner {
-    margin-bottom: 75px;
+    margin: 25px 25px 75px 25px;
     .explore-banner-options {
         @include flex($align: center, $just_content: center);
         flex-wrap: wrap;
-        margin: 20px;
         .explore-banner-set {
             position: relative;
             flex-basis: 100%;
             margin-bottom: 20px;
-            //flex-basis: 32%;
-            //margin-right: 20px;
             img {
                 display: block;
                 width: 100%;
                 height: 200px;
-                //height: 270px;
                 object-fit: cover;
             }
             .banner-title {
@@ -93,7 +89,6 @@
             .banner-title {
                 right: 0;
                 top: 60%;
-                //top: 67%;
                 margin-right: 18px;  
                 text-align: center;
                 color: $black;
@@ -122,88 +117,79 @@
 
 // PRODUCT CARD
 .product-card {
-    margin-bottom: 100px;
+    padding-bottom: 100px;
     .product-card-title {
         .decorative-line {
             background: $dark_grey;
         }
     }
-
-    .product-card-list {
-        @include flex($just_content: center);
-        flex-wrap: wrap;
-        margin: 0px 40px 30px 40px;
-        .card {
-            flex-basis: 44%;
-            //flex-basis: 15%;
-            margin-right: 28px;
-            margin-bottom: 35px;
-            text-align: center;
-            transition: .3s;
-            .product-img {
-                position: relative;
-                img {
-                    display: block;
-                    width: 100%;
-                    border-radius: 5px;
-                    box-shadow: 0px 0px 14px 0px #ccc2c2;
+    .wrapper-card-list {
+        @include flex();
+        overflow-x: auto;
+        .product-card-list {
+            @include flex();
+            grid-gap: 28px;
+            padding: 0 40px;
+            padding-bottom: 8px;
+            padding-top: 4px;
+            scroll-padding: 0 24px;
+            .card {
+                width: 200px;
+                margin-bottom: 35px;
+                text-align: center;
+                transition: .3s;
+                .product-img {
+                    position: relative;
+                    img {
+                        display: block;
+                        width: 100%;
+                        border-radius: 5px;
+                        box-shadow: 0px 0px 14px 0px #ccc2c2;
+                    }
                 }
-            }
-            .product-info {
-                font-size: 14px;
-                p {
-                    margin-bottom: 5px;
-                    font-weight: 500;
-                    color: $dark_grey;
-                }
-                span {
-                    color: $second_light_grey;
-                }
-            }
-        }
-        .card:nth-child(2),
-        .card:nth-child(4),
-        .card:nth-child(6),
-        .card:nth-child(8),
-        .card:nth-child(10),
-        .card:nth-child(12) {
-            margin-right: 0;
-        }
-        /**.card:nth-child(6),
-        .card:nth-child(12) {
-            margin-right: 0;
-        }**/
-        .card:nth-child(2) {
-            .product-img {
-                position: relative;
-                display: inline-block;
-            }
-            .product-info {
-                span {
-                    color: $scount_orange;
-                    &:before {
-                        content: "$35.00";
-                        margin-right: 5px;
-                        text-decoration: line-through;
+                .product-info {
+                    font-size: 14px;
+                    p {
+                        margin-bottom: 5px;
+                        font-weight: 500;
+                        color: $dark_grey;
+                    }
+                    span {
                         color: $second_light_grey;
-                    }        
+                    }
                 }
             }
-        }
-        .card:nth-child(10) {
-            .product-img {
-                position: relative;
-                display: inline-block;
-                .status {
-                    background: $light_blue;
+            .card:nth-child(2) {
+                .product-img {
+                    position: relative;
+                    display: inline-block;
+                }
+                .product-info {
+                    span {
+                        color: $badge_orange;
+                        &:before {
+                            content: "$35.00";
+                            margin-right: 5px;
+                            text-decoration: line-through;
+                            color: $second_light_grey;
+                        }        
+                    }
                 }
             }
-        }
-        .card:hover .overlay {
-            opacity: 1;
-        }
+            .card:nth-child(10) {
+                .product-img {
+                    position: relative;
+                    display: inline-block;
+                    .status {
+                        background: $badge_light_blue;
+                    }
+                }
+            }
+            .card:hover .overlay {
+                opacity: 1;
+            }
+        }    
     }
-
     .product-card-btn {
         a {
             padding-left: 35px;
@@ -275,23 +261,26 @@
 
 // NEWSLETTER
 .newsletter {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .newsletter-title {
+        p {
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+    }
     .newsletter-sign {
         text-align: center;
         input {
             width: 70%;
-            //flex-basis: 70%;
             margin-bottom: 10px;
             padding: 10px;
-            //margin-right: 5px;
         }
         input::placeholder {
             margin: 0;
             font-size: 12px;
         }
         .btn {
-            display: block;
             a {
                 padding: 12px 35px;
             }
@@ -309,9 +298,8 @@
         flex-wrap: wrap;
         li {
             @include flex($align: center, $just_content: center);
-            flex-basis: 24%;
+            flex-basis: 100%;
             margin-bottom: 20px;
-            //margin-right: 10px;
             i {
                 margin-right: 15px;
                 font-size: 30px;
@@ -332,7 +320,6 @@
         }
         li:last-child {
             margin-bottom: 0;
-            //margin-right: 0;
         }
     }
 }
@@ -346,6 +333,13 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
+    .title-set {
+        p {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
     // EXPLORE BANNER
     .explore-banner {
         .explore-banner-options {
@@ -357,32 +351,28 @@
         }
     }
 
-    // PRODUCT CARS 
-    .product-card {
-        .product-card-list {
-            .card {
-                flex-basis: 29%;
+    // NEWSLETTER
+    .newsletter { 
+        .newsletter-sign {
+            @include flex ($align: center, $just_content: center);
+            flex-wrap: wrap;
+            line-height: 12px;
+            input {
+                width: 40%;
+                margin-bottom: 0px;
+                margin-right: 5px;
             }
-            .card:nth-child(2),
-            .card:nth-child(4),
-            .card:nth-child(8),
-            .card:nth-child(10) {
-                margin-right: 28px;
+            .btn {
+                margin: 0;
             }
-            .card:nth-child(3),
-            .card:nth-child(6),
-            .card:nth-child(9),
-            .card:nth-child(12) {
-                margin-right: 0px;
-            }
-        }    
-    }
+        }
+    }        
     
     // SERVICES
     .services {
         .services-list {
             li {
-                flex-basis: 50%;
+                flex-basis: 40%;
             }
             li:first-child, 
             li:nth-child(2) {
@@ -399,12 +389,14 @@
         .explore-banner-options {
             .explore-banner-set {
                 flex-basis: 45%;
-                margin-right: 20px;
+                margin-right: 25px;
+                margin-bottom: 0px;
                 img {
                     height: 220px;
                 }
             }
             .explore-banner-set:nth-child(2) {
+                margin-right: 0;
                 .banner-title {
                     top: 60%;
                 }
@@ -418,21 +410,29 @@
 
     // PRODUCT CARS 
     .product-card {
-        .product-card-list {
-            .card {
-                flex-basis: 20%;
+        .wrapper-card-list {
+            overflow-x: unset;
+            .product-card-list {
+                @include flex ($just_content: center);
+                grid-gap: 0; 
+                padding: 0; 
+                padding-bottom: 0; 
+                padding-top: 0; 
+                scroll-padding: 0;
+                flex-wrap: wrap;
+                margin: 0px 40px 30px 40px;
+                .card {
+                    width: 100%;
+                    flex-basis: 20%;
+                    margin-right: 28px;
+                }
+                .card:nth-child(4),
+                .card:nth-child(8), 
+                .card:nth-child(12) {
+                    margin-right: 0px;
+                }    
             }
-            .card:nth-child(4),
-            .card:nth-child(8),
-            .card:nth-child(12) {
-                margin-right: 0px;
-            }
-            .card:nth-child(3),
-            .card:nth-child(6),
-            .card:nth-child(9) {
-                margin-right: 28px;
-            }
-        }    
+        }
     }
 
     // BLOG POST
@@ -446,9 +446,22 @@
             }
         }
     }
+
+    // NEWSLETTER
+    .newsletter {
+        .newsletter-title {
+            p {
+                margin-right: 0px;
+                margin-left: 0px;
+            }
+        }
+        .newsletter-sign {
+            input {
+                width: 30%;
+            }
+        }
+    }    
 }
-
-
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -456,6 +469,7 @@
     .home-jumbotron {
         height: 600px;
     }
+
     // EXPLORE BANNER
     .explore-banner {
         .explore-banner-options {
@@ -465,6 +479,9 @@
                     height: 210px;
                 }
             }
+            .explore-banner-set:nth-child(2) {
+                margin-right: 25px;
+            }
             .explore-banner-set:nth-child(3) {
                 margin-top: 0px;
             }        
@@ -473,18 +490,20 @@
 
     // PRODUCT CARS 
     .product-card {
-        .product-card-list {
-            .card {
-                flex-basis: 14%;
-            }
-            .card:nth-child(4),
-            .card:nth-child(8) {
-                margin-right: 28px;
-            }
-            .card:nth-child(6) {
-                margin-right: 0;
-            }
-        }    
+        .wrapper-card-list {
+            .product-card-list {
+                .card {
+                    flex-basis: 14%;
+                }
+                .card:nth-child(4),
+                .card:nth-child(8) {
+                    margin-right: 28px;
+                }
+                .card:nth-child(6) {
+                    margin-right: 0;
+                }
+            }    
+        }
     }        
     
     // BLOG POST
@@ -502,19 +521,11 @@
     // NEWSLETTER
     .newsletter {
         .newsletter-sign {
-            @include flex ($align: center, $just_content: center);
-            flex-wrap: wrap;
-            line-height: 12px;
             input {
                 width: 25%;
-                margin-bottom: 0px;
-                margin-right: 5px;
-            }
-            .btn {
-                margin: 0;
             }
         }
-    }
+    }        
 
     // SERVICES
     .services {
@@ -571,7 +582,7 @@
     .newsletter {
         .newsletter-sign {
             input {
-                width: 15%;
+                width: 18%;
             }
         }
     }
@@ -581,10 +592,12 @@
 @media (min-width: 1480px) {
     // PRODUCT CARS 
     .product-card {
-        .product-card-list {
-            .card {
-                flex-basis: 15%;
-            }
-        }    
+        .wrapper-card-list {
+            .product-card-list {
+                .card {
+                    flex-basis: 15%;
+                }
+            }    
+        }
     }        
 }

@@ -34,19 +34,8 @@
         }
     }
     .foot-main-social {
-        flex-basis: 70%;
+        flex-basis: 65%;
     }
-
-
-    /*.foot-contacts,
-    .foot-main-social {
-        flex-basis: 23%;
-    }
-    .foot-categories,
-    .foot-information,
-    .foot-useful-links {
-        flex-basis: 18%;
-    }*/
 
     .foot-contacts {
         .general-contacts {
@@ -130,6 +119,15 @@
         li:last-child {
             margin-right: 0;
         }
+    }
+}
+
+// Correction
+@media (min-width: 425px) {
+    .main-footer {
+        .foot-main-social {
+            flex-basis: 46%;
+        }    
     }
 }
 
