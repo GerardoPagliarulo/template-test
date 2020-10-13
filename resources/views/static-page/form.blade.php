@@ -17,7 +17,7 @@
                 <i class="fas fa-exclamation-circle hidden"></i>
             </div>
             <div class="form-group">
-                <input type="text" id="address" class="form-control" name="address" placeholder="Address">
+                <input type="text" id="address" class="form-control" name="address" placeholder="Address (optional)">
                 <i class="fas fa-exclamation-circle hidden"></i>
             </div>
             {{-- Password --}}
@@ -39,17 +39,17 @@
                     <li class="num uncheck">
                         <i class="fas fa-exclamation-circle num-exclamation"></i>
                         <i class="fas fa-check-circle num-check hidden"></i>
-                        1 number
+                        At least 1 number
                     </li>
                     <li class="special-char uncheck">
                         <i class="fas fa-exclamation-circle special-char-exclamation"></i>
                         <i class="fas fa-check-circle special-char-check hidden"></i>
-                        3 special characters
+                        At least 3 special characters
                     </li>
                     <li class="space uncheck">
                         <i class="fas fa-exclamation-circle  space-exclamation"></i>
                         <i class="fas fa-check-circle  space-check hidden"></i>
-                        No spaces
+                        No white spaces
                     </li>
                     <li class="no-name uncheck">
                         <i class="fas fa-exclamation-circle  no-name-exclamation"></i>

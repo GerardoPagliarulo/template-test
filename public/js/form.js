@@ -12692,8 +12692,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   var pw = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password');
   var firstName = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#first-name');
   var lastName = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#last-name');
-  var numbers = /[0-9]/g;
-  var specialChar = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g; // Backgroun color change
+  var numbers_regex = /[0-9]/g;
+  var specialChar_regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g; // Backgroun color change
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('bg-white');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('footer').addClass('bg-grey'); // Form Validation
@@ -12713,7 +12713,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       },
       address: {
         required: false,
-        minlength: 10
+        address_validation: true
       },
       password: {
         required: true,
@@ -12723,11 +12723,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         required: true,
         equalTo: '#password'
       }
-    },
-    // Labels messages (labels are disabled)
-    messages: {
-      address: "Please enter complete address",
-      confirm_password: "Not same password"
     },
     // Validation error layout
     highlight: function highlight(element) {
@@ -12753,6 +12748,16 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     submitHandler: function submitHandler(form) {
       form.submit();
     }
+  }); // Address validation
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default.a.validator.addMethod("address_validation", function (value) {
+    if (value.length == 0) {
+      return true;
+    } else if (/^(?=.{10,})([a-zA-Z0-9\s]+)([0-9]{5}\s)([a-zA-Z]+)$/.test(value)) {
+      return true;
+    } else {
+      return false;
+    }
   }); // Password validation
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default.a.validator.addMethod("pw_validation", function (value) {
@@ -12765,7 +12770,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     } else {
       return false;
     }
-  }, "Passwor uncorrect"); // Password checklist visibility and general usability feedbacks
+  }); // Password checklist visibility and general usability feedbacks
 
   pw.focus(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-check').removeClass('visibility');
@@ -12776,7 +12781,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   myInput.on('keyup', function () {
     // At least one number
-    if (pw.val().match(numbers)) {
+    if (pw.val().match(numbers_regex)) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.num-exclamation').addClass('hidden');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.num-check').removeClass('hidden');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.num').removeClass('uncheck');
@@ -12789,7 +12794,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     } // At least three special characters
 
 
-    if ((pw.val().match(specialChar) || []).length >= 3) {
+    if ((pw.val().match(specialChar_regex) || []).length >= 3) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.special-char-exclamation').addClass('hidden');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.special-char-check').removeClass('hidden');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.special-char').removeClass('uncheck');

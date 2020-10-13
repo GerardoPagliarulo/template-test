@@ -10,8 +10,8 @@ $(document).ready(function () {
     var pw = $('#password');
     var firstName = $('#first-name');
     var lastName = $('#last-name');
-    var numbers = /[0-9]/g;
-    var specialChar = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+    var numbers_regex = /[0-9]/g;
+    var specialChar_regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
     // Backgroun color change
     $('body').addClass('bg-white');
     $('footer').addClass('bg-grey');
@@ -31,7 +31,7 @@ $(document).ready(function () {
             },
             address: {
                 required: false,
-                minlength: 10
+                address_validation: true
             },
             password: {
                 required: true,
@@ -41,11 +41,6 @@ $(document).ready(function () {
                 required: true,
                 equalTo: '#password'
             }
-        },
-        // Labels messages (labels are disabled)
-        messages: {
-            address: "Please enter complete address",
-            confirm_password: "Not same password"
         },
         // Validation error layout
         highlight: function(element) {
@@ -71,6 +66,18 @@ $(document).ready(function () {
             form.submit();
         }
     });
+    // Address validation
+    $.validator.addMethod("address_validation", function (value) {
+        if (value.length == 0) {
+            return true;
+        }
+        else if (/^(?=.{10,})([a-zA-Z0-9\s]+)([0-9]{5}\s)([a-zA-Z]+)$/.test(value)) {
+            return true;
+        }
+        else {
+            return false;
+        } 
+    });     
     // Password validation
     $.validator.addMethod("pw_validation", function (value) {
         if ( /^(?=.*[0-9])(?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{3,})(?!.* ).{10,}$/.test(value)) {
@@ -84,7 +91,7 @@ $(document).ready(function () {
         else {
             return false;
         }    
-    }, "Passwor uncorrect");        
+    });        
     // Password checklist visibility and general usability feedbacks
     pw.focus(function () {
         $('.password-check').removeClass('visibility');
@@ -95,7 +102,7 @@ $(document).ready(function () {
     // On keyup
     myInput.on('keyup', function () {
         // At least one number
-        if (pw.val().match(numbers)) {
+        if (pw.val().match(numbers_regex)) {
             $('.num-exclamation').addClass('hidden');
             $('.num-check').removeClass('hidden');
             $('.num').removeClass('uncheck');
@@ -108,7 +115,7 @@ $(document).ready(function () {
             $('.num').addClass('uncheck');
         }
         // At least three special characters
-        if ((pw.val().match(specialChar) || []).length >= 3) {
+        if ((pw.val().match(specialChar_regex) || []).length >= 3) {
             $('.special-char-exclamation').addClass('hidden');
             $('.special-char-check').removeClass('hidden');
             $('.special-char').removeClass('uncheck');
