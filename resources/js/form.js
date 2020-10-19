@@ -8,8 +8,8 @@ $(document).ready(function () {
     // Vars
     var myInput = $('input');
     var pw = $('#password');
-    var firstName = $('#first-name');
-    var lastName = $('#last-name');
+    var firstName_input = $('#first-name').val().toLowerCase();
+    var lastName_input = $('#last-name').val().toLowerCase();
     var numbers_regex = /[0-9]/g;
     var specialChar_regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
     // Backgroun color change
@@ -81,7 +81,7 @@ $(document).ready(function () {
     // Password validation
     $.validator.addMethod("pw_validation", function (value) {
         if ( /^(?=.*[0-9])(?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{3,})(?!.* ).{10,}$/.test(value)) {
-            if (!(value.includes(firstName.val())) && !(value.includes(lastName.val()))) {
+            if (!(value.toLowerCase().includes(firstName_input)) && !(value.toLowerCase().includes(lastName_input))) {
                 return true;
             }
             else {
@@ -141,7 +141,7 @@ $(document).ready(function () {
             $('.space').addClass('uncheck');
         }
         // No First and Last name
-        if (!(pw.val().includes(firstName.val())) && !(pw.val().includes(lastName.val())) && !(pw.val().length == 0)) {
+        if (!(pw.val().toLowerCase().includes(firstName_input)) && !(pw.val().toLowerCase().includes(lastName_input)) && !(pw.val().length == 0)) {
             $('.no-name-exclamation').addClass('hidden');
             $('.no-name-check').removeClass('hidden');
             $('.no-name').removeClass('uncheck');

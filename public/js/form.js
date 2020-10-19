@@ -12690,8 +12690,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   // Vars
   var myInput = jquery__WEBPACK_IMPORTED_MODULE_0___default()('input');
   var pw = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password');
-  var firstName = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#first-name');
-  var lastName = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#last-name');
+  var firstName_input = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#first-name').val().toLowerCase();
+  var lastName_input = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#last-name').val().toLowerCase();
   var numbers_regex = /[0-9]/g;
   var specialChar_regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g; // Backgroun color change
 
@@ -12762,7 +12762,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default.a.validator.addMethod("pw_validation", function (value) {
     if (/^(?=.*[0-9])(?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{3,})(?!.* ).{10,}$/.test(value)) {
-      if (!value.includes(firstName.val()) && !value.includes(lastName.val())) {
+      if (!value.toLowerCase().includes(firstName_input) && !value.toLowerCase().includes(lastName_input)) {
         return true;
       } else {
         return false;
@@ -12820,7 +12820,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     } // No First and Last name
 
 
-    if (!pw.val().includes(firstName.val()) && !pw.val().includes(lastName.val()) && !(pw.val().length == 0)) {
+    if (!pw.val().toLowerCase().includes(firstName_input) && !pw.val().toLowerCase().includes(lastName_input) && !(pw.val().length == 0)) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.no-name-exclamation').addClass('hidden');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.no-name-check').removeClass('hidden');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.no-name').removeClass('uncheck');
