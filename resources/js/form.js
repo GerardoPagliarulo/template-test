@@ -8,8 +8,8 @@ $(document).ready(function () {
     // Vars
     var myInput = $('input');
     var pw = $('#password');
-    var firstName_input = $('#first-name').val().toLowerCase();
-    var lastName_input = $('#last-name').val().toLowerCase();
+    var firstName_input = $('#first-name');
+    var lastName_input = $('#last-name');
     var numbers_regex = /[0-9]/g;
     var specialChar_regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
     // Backgroun color change
@@ -141,7 +141,7 @@ $(document).ready(function () {
             $('.space').addClass('uncheck');
         }
         // No First and Last name
-        if (!(pw.val().toLowerCase().includes(firstName_input)) && !(pw.val().toLowerCase().includes(lastName_input)) && !(pw.val().length == 0)) {
+        if (!(pw.val().toLowerCase().includes(firstName_input.val().toLowerCase())) && !(pw.val().toLowerCase().includes(lastName_input.val().toLowerCase())) && !(pw.val().length == 0)) {
             $('.no-name-exclamation').addClass('hidden');
             $('.no-name-check').removeClass('hidden');
             $('.no-name').removeClass('uncheck');

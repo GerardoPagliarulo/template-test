@@ -12690,8 +12690,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   // Vars
   var myInput = jquery__WEBPACK_IMPORTED_MODULE_0___default()('input');
   var pw = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password');
-  var firstName_input = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#first-name').val().toLowerCase();
-  var lastName_input = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#last-name').val().toLowerCase();
+  var firstName_input = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#first-name');
+  var lastName_input = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#last-name');
   var numbers_regex = /[0-9]/g;
   var specialChar_regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g; // Backgroun color change
 
@@ -12820,7 +12820,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     } // No First and Last name
 
 
-    if (!pw.val().toLowerCase().includes(firstName_input) && !pw.val().toLowerCase().includes(lastName_input) && !(pw.val().length == 0)) {
+    if (!pw.val().toLowerCase().includes(firstName_input.val().toLowerCase()) && !pw.val().toLowerCase().includes(lastName_input.val().toLowerCase()) && !(pw.val().length == 0)) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.no-name-exclamation').addClass('hidden');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.no-name-check').removeClass('hidden');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.no-name').removeClass('uncheck');
