@@ -12753,7 +12753,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default.a.validator.addMethod("address_validation", function (value) {
     if (value.length == 0) {
       return true;
-    } else if (/^(?=.{10,})([a-zA-Z0-9\s]+)([0-9]{5}\s)([a-zA-Z]+)$/.test(value)) {
+    } else if (/^(?=.{10,})([a-zA-Z0-9\s]+)([0-9]{5}\s+)([a-zA-Z0-9\s]+)$/.test(value)) {
       return true;
     } else {
       return false;

@@ -71,7 +71,7 @@ $(document).ready(function () {
         if (value.length == 0) {
             return true;
         }
-        else if (/^(?=.{10,})([a-zA-Z0-9\s]+)([0-9]{5}\s)([a-zA-Z]+)$/.test(value)) {
+        else if (/^(?=.{10,})([a-zA-Z0-9\s]+)([0-9]{5}\s+)([a-zA-Z0-9\s]+)$/.test(value)) {
             return true;
         }
         else {
